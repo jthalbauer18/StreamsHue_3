@@ -5,12 +5,14 @@
  */
 package streamshue_3;
 
-import java.util.List;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
 
 /**
  *
  * @author Jonny
  */
-public interface Printable {
-    void print(List<Weapon> weapons);
+public class OddEvenPredicate {
+    final Predicate<Integer> isEven = null;
+    final IntPredicate isPositive = null;
 }

@@ -5,9 +5,12 @@
  */
 package streamshue_3;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,18 +18,20 @@ import java.util.Scanner;
  */
 public class WeaponCSV {
 
-    public void readFile() {
-        try {
-            File myObj = new File("filename.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+    public List<Weapon> readFile() throws IOException {
+        int count = 0;
+        String file = "weapons.csv";
+        String split = ",";
+        List<Weapon> content = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                line = br.readLine();
+                content = line.split(",");
             }
-            myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+
         }
+        return content;
     }
 }

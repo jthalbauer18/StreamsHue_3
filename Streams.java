@@ -1,8 +1,6 @@
-package net.htlgrieskirchen.pos3.streams;
+package  streamshue_3;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Streams {
 

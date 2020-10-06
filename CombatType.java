@@ -1,4 +1,4 @@
-package net.htlgrieskirchen.pos3.streams;
+package  streamshue_3;
 
 public enum CombatType {
     MELEE, RANGED, NONE
